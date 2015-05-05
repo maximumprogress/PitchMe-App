@@ -11,9 +11,8 @@ angular.module('app').controller('spielController', function($scope) {
 					dataType: "text",
 					crossDomain: true,
 					data:{uId:data.authResponse.userID,accessToken:data.authResponse.accessToken},
-					url: app.ApiUrl+"?befehl=3",
+					url: app.ApiUrl+"api.php",
 					success: function (responseData, textStatus, jqXHR) {
-						console.log("def")
 						console.log(responseData)
 						var authResult = JSON.parse(responseData)
 						console.log(responseData)
@@ -26,12 +25,13 @@ angular.module('app').controller('spielController', function($scope) {
 					}
 				});
 				}else{
-					navigator.pushPage("login.html");  
+					console.log("zug Login")
+					navigator.loadPage("login.html");  
 				}
 			}, function(){
-				navigator.pushPage("login.html");   
+				navigator.loadPage("login.html");   
 				});
-			console.log("hole Spiele")
+			
         }else{
 	        console.log("genug da");   
         }
