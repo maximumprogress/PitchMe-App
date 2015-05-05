@@ -11,7 +11,7 @@ angular.module('app').controller('loginController', function($scope) {
 					success: function (responseData, textStatus, jqXHR) {
 						console.log(responseData)
 						var authResult = JSON.parse(responseData)
-						console.log(responseData)
+						console.log("login.gesendet");
 						$.mobile.loading( 'hide', {});
 						},
 					error: function (responseData, textStatus, errorThrown) {
